@@ -5,10 +5,9 @@ on:
     types: [closed]
     branches:
       - main
-  on:
-    push:
-      branches:
-        - 'main'
+  push:
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -35,8 +34,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     permissions:
-    pages: write
-    id-token: write
+      pages: write
+      id-token: write
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
