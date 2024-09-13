@@ -1,0 +1,31 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<title>スライド置き場</title>
+	<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+</head>
+<body>
+	<h1>スライド置き場</h1>
+	<p>
+		スライドを置いていきます。
+		このスライドはGitHub Actions上でNixを使ってビルドしています。
+	</p>
+  <span>最終ビルド: {{ site.time | date: "%Y年%m月%d日" }}</span>
+	<ul>
+    {% for content in site.static_files %} 
+	  	  {% if content.extname == ".html" %}
+				  <li>
+	  	      <div>
+							<a href={{ content.path }}>{{ content.basename }}</a>
+	  	        <a href=slides/{{ content.basename }}.pdf>PDFはこちら</a>
+						</div>
+					</li>
+        {% endif %}
+    {% endfor %}
+	</ul>
+</body>
+</html>
