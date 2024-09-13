@@ -49,6 +49,7 @@
           self.marp-cli
           pkgs.google-chrome
           pkgs.jekyll
+          pkgs.noto-fonts-cjk-sans
         ];
         src = ./.;
         buildPhase = ''
@@ -77,7 +78,6 @@
         packages = with pkgs; [
           marp-cli
           google-chrome
-          zola
           jekyll
           nil
         ];
